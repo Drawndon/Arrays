@@ -2,6 +2,7 @@
 using namespace std;
 #define BINARY_CONVERT
 #define HEX_CONVERT
+#define DELTA 55
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -46,7 +47,7 @@ void main()
 	{
 		if (hex_arr[j] < 10)
 			cout << hex_arr[j];
-		else cout << char(hex_arr[j] + 55);
+		else cout << char(hex_arr[j] + DELTA);
 	}
 	cout << endl;
 #endif // HEX_CONVERT
