@@ -5,22 +5,23 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "");
+	int i;
 #ifdef BINARY_CONVERT
 	const int n = 16;
-	int arr[n];
-	int number, i;
+	int bin_arr[n];
+	int number;
 	cout << "Программа перевода десятичного числа в двоичное" << endl;
 	cout << "Введите десятичное число: "; cin >> number;
 	int temp = number;
 	for (i = 0; temp > 0; i++)
 	{
-		arr[i] = temp % 2;
+		bin_arr[i] = temp % 2;
 		temp /= 2;
 	}
 	cout << "Число " << number << " в двоичной системе равно: ";
 	for (i = i - 1; i >= 0; i--)
-		cout << arr[i];
-	cout << endl;
+		cout << bin_arr[i];
+	cout << "b" << endl;
 #endif // BINARY_CONVERT
 
 	
