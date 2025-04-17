@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
+#define SHIFT_RIGHT
+//#define SHIFT_LEFT
 
 void main()
 {
@@ -9,7 +11,8 @@ void main()
 	cout << "Исходный массив:" << endl;
 	for (int i = 0; i < n; i++) cout << arr[i] << " ";
 	int shift;
-	cout << endl << "Введите число, на которое вы хотите сдвинуть элементы массива влево: "; cin >> shift;
+	cout << endl << "Введите число, на которое вы хотите сдвинуть элементы массива вправо: "; cin >> shift;
+#ifdef SHIFT_LEFT
 	int t;
 	for (int i = 0; i < shift % n; i++)
 	{
@@ -22,4 +25,20 @@ void main()
 	}
 	cout << endl << "Сдвинутый массив:" << endl;
 	for (int i = 0; i < n; i++) cout << arr[i] << " ";
+#endif // SHIFT_LEFT
+
+#ifdef SHIFT_RIGHT
+	int buffer;
+	for (int i = 0; i < shift % n; i++)
+	{
+		buffer = arr[n - 1];
+		for (int j = n - 1; j > 0; j--)
+		{
+			arr[j] = arr[j - 1];
+		}
+		arr[0] = buffer;
+	}
+	cout << endl << "Сдвинутый массив:" << endl;
+	for (int i = 0; i < n; i++) cout << arr[i] << " ";
+#endif // SHIFT_RIGHT
 }

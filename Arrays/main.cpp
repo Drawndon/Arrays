@@ -19,6 +19,10 @@ void main()
 			max_el = arr[i];
 		s += arr[i];
 	}
+/*	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % (100 - 50) + 50; //ограничили снизу 50 сверху 100
+	}*/
 	average = (double)s / n;
 	cout << endl << "1. Вывод в прямом порядке:" << endl;
 	for (int i = 0; i < n; i++)
