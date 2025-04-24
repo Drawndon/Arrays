@@ -48,10 +48,11 @@ void main()
 		for (int j = 0; j < cols; j++, k++)
 		{
 			d_arr[i + k] = arr[i][j];
+			cout << d_arr[i + k] << "\t";
 		}
 	}
-	cout << "Вывожу одномерный массив из двумерного" << endl;
-	for (int i = 0; i < rows * cols; cout << d_arr[i] << "\t", i++)
+	cout << endl << "Вывожу одномерный массив из двумерного" << endl;
+	for (int i = 0; i < rows * cols; i++) cout << d_arr[i] << "\t";
 	// Сдвигаю влево
 	//int t;
 	for (int i = 0; i < shift % (rows * cols); i++)
