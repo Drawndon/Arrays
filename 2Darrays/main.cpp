@@ -163,5 +163,44 @@ void main()
 	cout << "Сумма элементов массива: " << s << endl;
 	cout << "Среднее арифметическое элементов массива: " << (double)s / (rows * cols) << endl;
 	cout << "Минимальное значение: " << min_el << endl << "Максимальное значение: " << max_el << endl;
+	/*Делаем сортировку двумерного массива
+	//Вывод исходного массива
+	for (int i = 0; i < rows; i++)
+	{
+	for (int j = 0; j < cols; j++)
+	{
+	cout << arr[i][j] << "\t";
+	}
+	}
+	// Сортировка массива
+	for (int i = 0; i < rows; i++)
+	{
+	for (int j = 0; j < cols; j++)
+	{
+		for (int k = i ; k < rows; k++)
+		{
+			for (int l = k > i ? 0 : j + 1; l < cols; l++)
+			{
+				arr[i][j] - выбранный элемент
+				arr[k][l] - перебираемый элемент
+				if (arr[k][l] < arr[i][j])
+				{
+					int buffer = arr[i][j];
+					arr[i][j] = arr[k][l];
+					arr[k][l] = buffer;
+				}
+			}
+		}
+
+	}
+	}
+	//Вывод отсортированного массива
+	for (int i = 0; i < rows; i++)
+	{
+	for (int j = 0; j < cols; j++)
+	{
+	cout << arr[i][j] << "\t";
+	}
+	}*/
 	
 }
