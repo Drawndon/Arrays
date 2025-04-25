@@ -7,8 +7,8 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	srand(time(0));
-	const int rows = 3;
-	const int cols = 3;
+	const int rows = 5;
+	const int cols = 4;
 	int arr[rows][cols];
 	int s = 0;
 	int min_el = INT_MAX;
@@ -38,33 +38,28 @@ void main()
 	
 		int shift;
 		cout << "Насколько элементов сдвинуть двумерный массив? Введите число: "; cin >> shift;
-		cout << "Сдвиг влево" << endl;
 	
-		// Подготовительные манипуляции для сортировки двумерного массива
-		// Сохраняю двумерный массив в одномерный
+
+	// Сохраняю двумерный массив в одномерный
 	int d_arr[rows * cols];
 	for (int i = 0, k = 0; i < rows; i++, k -= 1)
 	{
 		for (int j = 0; j < cols; j++, k++)
 		{
 			d_arr[i + k] = arr[i][j];
-			cout << d_arr[i + k] << "\t";
 		}
 	}
-	cout << endl << "Вывожу одномерный массив из двумерного" << endl;
-	for (int i = 0; i < rows * cols; i++) cout << d_arr[i] << "\t";
 	// Сдвигаю влево
-	//int t;
 	for (int i = 0; i < shift % (rows * cols); i++)
 	{
 		int t = d_arr[0];
-		for (int j = 1; j < cols; j++)
+		for (int j = 1; j < rows * cols; j++)
 		{
 			d_arr[j - 1] = d_arr[j];
 		}
 		d_arr[rows * cols - 1] = t;
 	}
-	cout << endl;
+	
 	// Сохраняю одномерный массив обратно в двумерный
 	for (int i = 0, k = 0; i < rows; i++, k -= 1)
 	{
@@ -74,7 +69,7 @@ void main()
 		}
 	}
 
-	cout << "Вывод сдвинутого влево двумерного массива на экран" << endl;
+	cout << endl << "Вывод сдвинутого влево двумерного массива на экран" << endl;
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
@@ -84,8 +79,7 @@ void main()
 		cout << endl;
 	}
 
-
-
+	// Подготовительные манипуляции для сортировки двумерного массива
 
 	// Сортирую одномерный массив
 	for (int j = 0; j < rows * cols; j++)
@@ -123,5 +117,5 @@ void main()
 	cout << "Сумма элементов массива: " << s << endl;
 	cout << "Среднее арифметическое элементов массива: " << (double)s / (rows * cols) << endl;
 	cout << "Минимальное значение: " << min_el << endl << "Максимальное значение: " << max_el << endl;
-	//#endif //2D_ARRAY_SORT		
+	
 }
