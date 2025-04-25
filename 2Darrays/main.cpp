@@ -38,7 +38,53 @@ void main()
 	
 		int shift;
 		cout << "Насколько элементов сдвинуть двумерный массив? Введите число: "; cin >> shift;
-	
+
+		// Сдвиг влево
+		cout << "Сдвинул влево построчно на " << shift << endl;
+		for (int k = 0; k < shift % cols; k++)
+		{
+			for (int i = 0; i < rows; i++)
+			{
+				int buffer = arr[i][0];
+				for (int j = 1; j < cols; j++)
+				{
+					arr[i][j - 1] = arr[i][j];
+				}
+				arr[i][cols - 1] = buffer;
+			}
+		}
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < cols; j++)
+			{
+				cout << arr[i][j] << "\t";
+			}
+			cout << endl;
+		}
+
+		// Сдвиг вправо
+		cout << "Сдвинул вправо построчно на " << shift << endl;
+		for (int k = 0; k < shift % cols; k++)
+		{
+			for (int i = 0; i < rows; i++)
+			{
+				int buffer = arr[i][cols - 1];
+				for (int j = cols - 1; j > 0; j--)
+				{
+					arr[i][j] = arr[i][j - 1];
+				}
+				arr[i][0] = buffer;
+			}
+		}
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < cols; j++)
+			{
+				cout << arr[i][j] << "\t";
+			}
+			cout << endl;
+		}
+
 
 	// Сохраняю двумерный массив в одномерный
 	int d_arr[rows * cols];
@@ -69,7 +115,7 @@ void main()
 		}
 	}
 
-	cout << endl << "Вывод сдвинутого влево двумерного массива на экран" << endl;
+	cout << endl << "Вывод сдвинутого влево змейкой двумерного массива на экран" << endl;
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
