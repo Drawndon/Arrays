@@ -1,7 +1,9 @@
 ﻿#include <iostream>
 using namespace std;
-#define BINARY_CONVERT
-#define HEX_CONVERT
+//#define BINARY_CONVERT
+//#define TEACHER_BINARY_CONVERT
+#define TEACHER_HEX_CONVERT
+//#define HEX_CONVERT
 #define DELTA 55
 void main()
 {
@@ -51,5 +53,39 @@ void main()
 	}
 	cout << endl;
 #endif // HEX_CONVERT
+	int decimal; //Хранит десятичное число, введенное пользователем
+	cout << "Введите десятичное число: "; cin >> decimal;
+#ifdef TEACHER_BINARY_CONVERT
 
+	const int n_bin = 32; // Максимальная возможная разрядность двоичного числа
+	bool binary[n_bin] = {};
+	int k = 0;
+	for (; decimal; decimal >>= 1) binary[k++] = decimal & 1;
+	for (--k; k >= 0; k--)
+	{
+		cout << binary[k];
+		if(k % 8 == 0) cout << " ";
+		if (k % 4 == 0) cout << " ";
+	}
+	cout << endl;
+#endif // TEACHER_BINARY_CONVERT
+#ifdef TEACHER_HEX_CONVERT
+
+	const int n_hex = 8; // Максимальная возможная разрядность двоичного числа
+	char hex[n_hex] = {};
+	int k = 0;
+	for (; decimal; decimal >>= 4)
+	{
+		hex[k] = decimal & 15;
+		hex[k++] += hex[k] < 10 ? 48 : 55;
+	}
+	for (--k; k >= 0; k--)
+	{
+		cout << hex[k];
+		//cout << char(hex[k] < 10 ? hex[k] + 48 : hex[k] + 55);
+		//if (k % 8 == 0) cout << " ";
+		//if (k % 4 == 0) cout << " ";
+	}
+	cout << endl;
+#endif // TEACHER_HEX_CONVERT
 }
