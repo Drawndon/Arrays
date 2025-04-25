@@ -1,11 +1,17 @@
 ﻿#include <iostream>
 #include <ctime>
 using namespace std;
+using std::cout;
+using std::cin;
+#define TEACHER_UNIQUE
+//#define UNIQUE
 
 void main()
 {
 	setlocale(LC_ALL, "");
 	srand(time(0));
+#ifdef UNIQUE
+
 	const int rows = 5;
 	const int cols = 5;
 	int arr_2d[rows][cols];
@@ -52,4 +58,43 @@ void main()
 		}
 		cout << endl;
 	}
+#endif // UNIQUE
+#ifdef TEACHER_UNIQUE
+
+	const int ROWS = 3;
+	const int COLS = 4;
+	int arr_n[ROWS][COLS];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			bool unique;
+			do
+			{
+				arr_n[i][j] = rand() % (ROWS * COLS);
+				unique = true;
+				for (int k = 0; k <= i; k++)
+				{
+					for (int l = 0; l < (k < i ? COLS : j); l++)
+					{
+						if (arr_n[i][j] == arr_n[k][l])
+						{
+							unique = false;
+							break;
+						}
+					}
+					if (!unique) break;
+				}
+			} while (!unique);
+		}
+	}
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr_n[i][j] << "\t";
+		}
+		cout << endl;
+	}
+#endif // TEACHER_UNIQUE
 }
