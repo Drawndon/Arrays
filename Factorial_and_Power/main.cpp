@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 //#define FACTORIAL
 #define POWER
@@ -9,15 +9,15 @@ void main()
 	setlocale(LC_ALL, "");
 #ifdef FACTORIAL
 	int n;
-	cout << "Ââåäèòå ÷èñëî, ôàêòîðèàë êîòîðîãî íåîáõîäèìî âû÷èñëèòü: "; cin >> n;
-	cout << "Ôàêòîðèàë ÷èñëà " << n << " = " << Factorial(n) << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾, Ñ„Ð°ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð» ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð²Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ: "; cin >> n;
+	cout << "Ð¤Ð°ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð» Ñ‡Ð¸ÑÐ»Ð° " << n << " = " << Factorial(n) << endl;
 #endif // FACTORIAL
 
 
 #ifdef POWER
 	int a, b;
-	cout << "Ââåäèòå ÷èñëî è ñòåïåíü, â êîòîðóþ åãî íåîáõîäèìî âîçâåñòè: "; cin >> a >> b;
-	cout << "×èñëî " << a << " â ñòåïåíè " << b << " = " << Power(a, b) << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¸ ÑÑ‚ÐµÐ¿ÐµÐ½ÑŒ, Ð² ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ ÐµÐ³Ð¾ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð²Ð¾Ð·Ð²ÐµÑÑ‚Ð¸: "; cin >> a >> b;
+	cout << "Ð§Ð¸ÑÐ»Ð¾ " << a << " Ð² ÑÑ‚ÐµÐ¿ÐµÐ½Ð¸ " << b << " = " << Power(a, b) << endl;
 #endif // POWER
 
 }
