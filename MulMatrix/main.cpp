@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 #define ROWS 4  
 #define COLS 3
@@ -8,7 +8,7 @@ void main()
 	setlocale(LC_ALL, "");
 	int matrix_A[ROWS][COLS];
 	int matrix_B[COLS][COLS];
-	cout << "Ôîðìèðóþ è âûâîæó ìàòðèöû" << endl;
+	cout << "Ð¤Ð¾Ñ€Ð¼Ð¸Ñ€ÑƒÑŽ Ð¸ Ð²Ñ‹Ð²Ð¾Ð¶Ñƒ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹" << endl;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)

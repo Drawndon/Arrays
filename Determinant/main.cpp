@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 #define ROWS 3
 #define COLS 3
@@ -7,7 +7,7 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	int arr[ROWS][COLS];
-	cout << "Ôîðìèðóþ è âûâîæó ìàòðèöó 3õ3" << endl;
+	cout << "Ð¤Ð¾Ñ€Ð¼Ð¸Ñ€ÑƒÑŽ Ð¸ Ð²Ñ‹Ð²Ð¾Ð¶Ñƒ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ 3Ñ…3" << endl;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
