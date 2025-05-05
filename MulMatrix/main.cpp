@@ -1,5 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 #define ROWS 4  
 #define COLS 3
 #define tab '\t'
@@ -12,28 +15,28 @@ void main()
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
-			matrix_A[i][j] = rand() % 24 + 1;
+			matrix_A[i][j] = rand() % 5 + 1;
 	}
 	for (int i = 0; i < COLS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
-			matrix_B[i][j] = rand() % 24 + 1;
+			matrix_B[i][j] = rand() % 5 + 1;
 	}
-	cout << "Matrix_A" << endl;
+	cout << endl << "Matrix_A" << endl;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 			cout << matrix_A[i][j] << tab;
 		cout << endl;
 	}
-	cout << "Matrix_B" << endl;
+	cout << endl << "Matrix_B" << endl;
 	for (int i = 0; i < COLS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 			cout << matrix_B[i][j] << tab;
 		cout << endl;
 	}
-	int matrix_C[ROWS][COLS];
+	int matrix_C[ROWS][COLS] = { 0 };
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -42,13 +45,8 @@ void main()
 				matrix_C[i][j] += matrix_A[i][k] * matrix_B[k][j];
 		}
 	}
-		for (int i = 0; i < COLS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-			cout << matrix_B[i][j] << tab;
-		cout << endl;
-	}
-		cout << "Matrix_C" << endl;
+
+		cout << endl << "A x B = C" << endl;
 		for (int i = 0; i < ROWS; i++)
 		{
 			for (int j = 0; j < COLS; j++)
