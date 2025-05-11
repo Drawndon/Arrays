@@ -9,7 +9,7 @@ void main()
 	setlocale(LC_ALL, "");
 	srand(time(0));
 	const int rows = 5;
-	const int cols = 5;
+	const int cols = 3;
 	int arr[rows][cols];
 
 	// Формирую массив из случайных чисел
@@ -94,6 +94,7 @@ void main()
 						break;
 					}
 				}
+				if (met_before) break;
 			}
 			if (met_before) continue;
 			int count = 0;
@@ -107,7 +108,7 @@ void main()
 					}
 				}
 			}
-			if (count > 0) cout << "Значение " << arr[i][j] << " повторяется " << count << endl;
+			if (count > 0) cout << "Значение " << arr[i][j] << " повторяется " << count << " раз" << endl;
 		}
 }
 #endif // REPEATS2

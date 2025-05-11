@@ -88,8 +88,8 @@ void main()
 			{
 				count++;
 			}
-			if (count > 0) cout << "Значение " << arr[i] << " повторяется " << count << " раз\n";
 		}
+		if (count > 0) cout << "Значение " << arr[i] << " повторяется " << count << " раз\n";
 	}
 #endif // TEACHER_REPEATS
 }
