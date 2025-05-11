@@ -11,7 +11,7 @@ void main()
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
-			arr[i][j] = rand() % 24 + 1;
+			arr[i][j] = rand() % 5 + 1;
 	}
 	for (int i = 0; i < ROWS; i++)
 	{

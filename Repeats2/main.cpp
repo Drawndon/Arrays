@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <ctime>
 using namespace std;
+//#define UGLY_REPEATS2
+#define REPEATS2
 
 void main()
 {
@@ -28,7 +30,7 @@ void main()
 		}
 		cout << endl;
 	}
-
+#ifdef UGLY_REPEATS2
 	// Подготовительные манипуляции для сортировки двумерного массива
 	// Сохраняю двумерный массив в одномерный
 	int d_arr[rows * cols];
@@ -72,5 +74,42 @@ void main()
 		step = count;
 		count = 0;
 	}
-	cout << endl;	
+	cout << endl;
+#endif // UGLY_REPEATS2
+
+
+#ifdef REPEATS2
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			bool met_before = false;
+			for (int k = 0; k < i; k++)
+			{
+				for (int l = 0; l < j; l++)
+				{
+					if (arr[i][j] == arr[k][l])
+					{
+						met_before = true;
+						break;
+					}
+				}
+			}
+			if (met_before) continue;
+			int count = 0;
+			for (int k = i + 1; k < rows; k++)
+			{
+				for (int l = j + 1; l < cols; l++)
+				{
+					if (arr[i][j] == arr[k][l])
+					{
+						count++;
+					}
+				}
+			}
+			if (count > 0) cout << "Значение " << arr[i][j] << " повторяется " << count << endl;
+		}
+}
+#endif // REPEATS2
+
 }
