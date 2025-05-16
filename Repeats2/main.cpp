@@ -2,14 +2,15 @@
 #include <ctime>
 using namespace std;
 //#define UGLY_REPEATS2
-#define REPEATS2
+//#define REPEATS2
+#define REPEATS2_AS_ONE_DIM
 
 void main()
 {
 	setlocale(LC_ALL, "");
 	srand(time(0));
-	const int rows = 5;
-	const int cols = 3;
+	const int rows = 4;
+	const int cols = 4;
 	int arr[rows][cols];
 
 	// Формирую массив из случайных чисел
@@ -17,7 +18,7 @@ void main()
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			arr[i][j] = rand() % 100;
+			arr[i][j] = rand() % 10;
 		}
 	}
 	// Вывожу сформированный массив
@@ -30,6 +31,7 @@ void main()
 		}
 		cout << endl;
 	}
+	cout << endl;
 #ifdef UGLY_REPEATS2
 	// Подготовительные манипуляции для сортировки двумерного массива
 	// Сохраняю двумерный массив в одномерный
@@ -84,33 +86,51 @@ void main()
 		for (int j = 0; j < cols; j++)
 		{
 			bool met_before = false;
-			for (int k = 0; k < i; k++)
+			for (int k = 0; k <= i; k++)
 			{
-				for (int l = 0; l < j; l++)
+				for (int l = 0; l < (k == i ? j : cols); l++)
 				{
 					if (arr[i][j] == arr[k][l])
 					{
 						met_before = true;
 						break;
 					}
+					if (met_before) break;
 				}
-				if (met_before) break;
 			}
 			if (met_before) continue;
 			int count = 0;
-			for (int k = i + 1; k < rows; k++)
+			for (int k = i; k < rows; k++)
 			{
-				for (int l = j + 1; l < cols; l++)
+				for (int l = k == i ? j + 1 : 0; l < cols; l++)
 				{
-					if (arr[i][j] == arr[k][l])
-					{
-						count++;
-					}
+					if (arr[i][j] == arr[k][l]) count++;
 				}
 			}
-			if (count > 0) cout << "Значение " << arr[i][j] << " повторяется " << count << " раз" << endl;
+			if (count) cout << "Значение " << arr[i][j] << " повторяется " << count << " раз." << endl;
 		}
-}
+	}
 #endif // REPEATS2
+#ifdef REPEATS2_AS_ONE_DIM
+	for (int i = 0; i < rows * cols; i++)
+	{
+		bool met_before = false;
+		for (int j = 0; j < i; j++)
+		{
+			if (arr[0][i] == arr[0][j])
+			{
+				met_before = true;
+				break;
+			}
+		}
+		if (met_before) continue;
+		int count = 0;
+		for (int j = i + 1; j < rows * cols; j++)
+		{
+			if (arr[0][i] == arr[0][j]) count++;
+		}
+		if (count) cout << "Значение " << arr[0][i] << " повторяется " << count << " раз" << endl;
+	}
+#endif // REPEATS2_AS_ONE_DIM
 
 }
