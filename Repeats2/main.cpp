@@ -112,6 +112,7 @@ void main()
 	}
 #endif // REPEATS2
 #ifdef REPEATS2_AS_ONE_DIM
+	//Это вариант работает для статического массива
 	for (int i = 0; i < rows * cols; i++)
 	{
 		bool met_before = false;
